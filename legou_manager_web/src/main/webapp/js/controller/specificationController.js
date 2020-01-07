@@ -37,6 +37,7 @@ app.controller("specificationController",function($scope,$controller,$http){
             if(resp.success){
                 // 重新刷新数据
                 $scope.reloadList();
+                $scope.entity = {};
             }else{
                 alert(resp.message);
             }
@@ -60,6 +61,7 @@ app.controller("specificationController",function($scope,$controller,$http){
     $scope.dele = function(){
         // 判断是否选择了元素
         if($scope.selectIds.length == 0){
+            alert("至少选则一个");
             return;
         }
 

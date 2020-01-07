@@ -97,6 +97,10 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.zxJava.domain.TbSpecification">
+    /*获取生成的主键值*/
+    <selectKey keyProperty="id" keyColumn="id" resultType="Long">
+      select last_insert_id()
+    </selectKey>
     insert into tb_specification (id, spec_name)
     values (#{id,jdbcType=BIGINT}, #{specName,jdbcType=VARCHAR})
   </insert>
