@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单击事件</title>
+    <!--引入angularJS的类库资源-->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("onApp",[]);
+        app.controller("myController",function ($scope) {
+            $scope.add = function () {
+              $scope.t = parseInt($scope.x) + parseInt($scope.y);
+            };
+        })
+    </script>
+</head>
+<body ng-app="onApp" ng-controller="myController" ng-init="delete()">
+    x:<input type="text" ng-model="x" />
+    +
+    y:<input type="text" ng-model="y" />
+
+    <input type="button" ng-click="add()" value="等于"/>{{t}}
+</body>
+</html>

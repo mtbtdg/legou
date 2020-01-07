@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向的绑定</title>
+    <!--引入angularJS的类库资源-->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript">
+        //称为 controller
+        function show($scope) {
+            //向 $scope 域对象中存入k-v
+            $scope.username = "湛翔";
+        }
+    </script>
+</head>
+<body ng-app ng-controller="show">
+
+    <input type="text" ng-model="username" />
+
+    <div>
+        {{username}}
+    </div>
+</body>
+</html>

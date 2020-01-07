@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>controller</title>
+    <!--引入angularJS的类库资源-->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("onApp",[]);
+        app.controller("myController",function ($scope) {
+            $scope.save = function () {
+                alert("save......")
+            };
+            
+            $scope.delete = function () {
+              alert("delete")
+            };
+        })
+    </script>
+</head>
+<body ng-app="onApp" ng-controller="myController" ng-init="delete()">
+    <input type="button" ng-click="save()" value="save"/>
+</body>
+</html>

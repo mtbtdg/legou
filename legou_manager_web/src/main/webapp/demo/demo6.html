@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步数据请求</title>
+    <!--引入angularJS的类库资源-->
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("onApp",[]);
+        app.controller("myController",function ($scope,$http) {
+            $scope.findAll = function () {
+                //success回调函数
+                $http.get("../brand/findAll").success(function (data) {
+                    //把data存入scope域对象
+                    $scope.brandlist = data;
+                })
+            }
+        });
+    </script>
+</head>
+<body ng-app="onApp" ng-controller="myController" ng-init="findAll()">
+    <div ng-repeat="brand in brandlist">
+        {{brand.id}} ----- {{brand.name}} ----- {{brand.firstChar}}
+    </div>
+</body>
+</html>
