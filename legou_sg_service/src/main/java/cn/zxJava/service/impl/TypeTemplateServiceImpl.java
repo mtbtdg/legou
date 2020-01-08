@@ -22,7 +22,6 @@ public class TypeTemplateServiceImpl implements TypeTemplateService {
     public PageInfo<TbTypeTemplate> findPage(int pageNum, int pageSize) {
         PageHelper.startPage(pageNum,pageSize);
         List<TbTypeTemplate> list = tbTypeTemplateMapper.selectByExample(null);
-        int i = 1;
         return new PageInfo<>(list);
     }
 }
