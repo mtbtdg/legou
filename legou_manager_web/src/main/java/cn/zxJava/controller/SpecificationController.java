@@ -39,4 +39,37 @@ public class SpecificationController {
             return new Result(false,"操作失败");
         }
     }
+
+    @RequestMapping("/findOne/{id}")
+    public Result findOne(@PathVariable Long id){
+        try {
+            Specification specification = specificationService.findOne(id);
+            return new Result(true,"操作成功",specification);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
+
+    @RequestMapping("/update")
+    public Result update(@RequestBody Specification specification){
+        try {
+            specificationService.update(specification);
+            return new Result(true,"操作成功",specification);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
+
+    @RequestMapping("/delete")
+    public Result delete(Long[] ids){
+        try {
+            specificationService.delete(ids);
+            return new Result(true,"操作成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
 }

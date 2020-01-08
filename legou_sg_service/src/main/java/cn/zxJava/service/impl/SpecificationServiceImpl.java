@@ -3,6 +3,7 @@ package cn.zxJava.service.impl;
 
 import cn.zxJava.domain.TbSpecification;
 import cn.zxJava.domain.TbSpecificationOption;
+import cn.zxJava.domain.TbSpecificationOptionExample;
 import cn.zxJava.groupentity.Specification;
 import cn.zxJava.mapper.TbSpecificationMapper;
 import cn.zxJava.mapper.TbSpecificationOptionMapper;
@@ -47,6 +48,53 @@ public class SpecificationServiceImpl implements SpecificationService {
             //设置外键值
             tbSpecificationOption.setSpecId(tbSpecification.getId());
             tbSpecificationOptionMapper.insert(tbSpecificationOption);
+        }
+    }
+
+    @Override
+    public Specification findOne(Long id) {
+        //先查询规格数据
+        TbSpecification tbSpecification = tbSpecificationMapper.selectByPrimaryKey(id);
+        //再查询规格项数据 逆向工程的sql语句的查询
+        //创建条件对象
+        TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+        example.createCriteria().andSpecIdEqualTo(tbSpecification.getId());
+        List<TbSpecificationOption> list = tbSpecificationOptionMapper.selectByExample(example);
+        //封装到组合类
+        Specification specification = new Specification();
+        specification.setTbSpecification(tbSpecification);
+        specification.setTbSpecificationOptionList(list);
+        return specification;
+    }
+
+    @Override
+    public void update(Specification specification) {
+        //先修改规格数据
+        TbSpecification tbSpecification = specification.getTbSpecification();
+        tbSpecificationMapper.updateByPrimaryKey(tbSpecification);
+        //删除规格项数据
+        TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+        example.createCriteria().andSpecIdEqualTo(tbSpecification.getId());
+        tbSpecificationOptionMapper.deleteByExample(example);
+        //再新增规格项数据
+        for (TbSpecificationOption tbSpecificationOption : specification.getTbSpecificationOptionList()) {
+            //设置外键值
+            tbSpecificationOption.setSpecId(tbSpecification.getId());
+            //保存
+            tbSpecificationOptionMapper.insert(tbSpecificationOption);
+        }
+    }
+
+    @Override
+    public void delete(Long[] ids) {
+        //遍历主键值
+        for (Long id : ids) {
+            //先删除规格数据
+            tbSpecificationMapper.deleteByPrimaryKey(id);
+            //再删除规格项数据
+            TbSpecificationOptionExample example = new TbSpecificationOptionExample();
+            example.createCriteria().andSpecIdEqualTo(id);
+            tbSpecificationOptionMapper.deleteByExample(example);
         }
     }
 }
