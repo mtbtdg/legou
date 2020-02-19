@@ -97,4 +97,9 @@ public class SpecificationServiceImpl implements SpecificationService {
             tbSpecificationOptionMapper.deleteByExample(example);
         }
     }
+
+    @Override
+    public List<TbSpecification> findAll() {
+        return tbSpecificationMapper.selectByExample(null);
+    }
 }

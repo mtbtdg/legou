@@ -68,7 +68,7 @@ app.controller("specificationController",function($scope,$controller,$http){
         // 确认框
         if(window.confirm("确定删除吗")){
             // 发送请求，删除数据
-            $http.get("../specification/delete?ids="+$scope.selectIds).success(function(resp){
+            $http.get("../specification/delete/"+$scope.selectIds).success(function(resp){
                 if(resp.success){
                     // 重新刷新数据
                     $scope.reloadList();

@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController // = @Controller + @ResponseBody
 @RequestMapping("/brand")
@@ -80,5 +83,26 @@ public class BrandController {
             e.printStackTrace();
             return new Result(false,"操作失败");
         }
+    }
+
+    @RequestMapping("/findBrandList")
+    public Result findBrandList(){
+        try {
+            List<Brand> list = brandService.findAll();
+            //创建一个集合,存储map
+            List<Map<String ,Object>> mapList = new ArrayList<>();
+            //遍历添加数据
+            for (Brand brand : list) {
+                Map<String ,Object> map = new HashMap<>();
+                map.put("id",brand.getId());
+                map.put("text",brand.getName());
+                mapList.add(map);
+            }
+            return new Result(true,"操作成功",mapList);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+
     }
 }

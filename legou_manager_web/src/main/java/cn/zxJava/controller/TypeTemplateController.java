@@ -6,6 +6,7 @@ import cn.zxJava.service.TypeTemplateService;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,4 +28,47 @@ public class TypeTemplateController {
         }
     }
 
+    @RequestMapping("/add")
+    public Result add(@RequestBody TbTypeTemplate tbTypeTemplate){
+        try {
+           typeTemplateService.add(tbTypeTemplate);
+            return new Result(true,"操作成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
+
+    @RequestMapping("/update")
+    public Result update(@RequestBody TbTypeTemplate tbTypeTemplate){
+        try {
+            typeTemplateService.update(tbTypeTemplate);
+            return new Result(true,"操作成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
+
+    @RequestMapping("/findOne/{id}")
+    public Result findOne(@PathVariable("id") Long id){
+        try {
+            TbTypeTemplate tbTypeTemplate = typeTemplateService.findOne(id);
+            return new Result(true,"操作成功",tbTypeTemplate);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
+
+    @RequestMapping("/delete/{ids}")
+    public Result delete(@PathVariable Long[] ids){
+        try {
+            typeTemplateService.delete(ids);
+            return new Result(true,"操作成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false,"操作失败");
+        }
+    }
 }

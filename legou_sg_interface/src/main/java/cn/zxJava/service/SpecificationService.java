@@ -4,6 +4,8 @@ import cn.zxJava.domain.TbSpecification;
 import cn.zxJava.groupentity.Specification;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 public interface SpecificationService {
 
     PageInfo<TbSpecification> findPage(int pageNum, int pageSize);
@@ -15,4 +17,6 @@ public interface SpecificationService {
     void update(Specification specification);
 
     void delete(Long[] ids);
+
+    List<TbSpecification> findAll();
 }

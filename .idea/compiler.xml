@@ -14,5 +14,8 @@
         <module name="legou_sg_service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="legou_parent" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
