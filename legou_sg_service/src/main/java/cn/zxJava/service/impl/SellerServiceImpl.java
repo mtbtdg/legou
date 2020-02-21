@@ -118,5 +118,4 @@ public class SellerServiceImpl implements SellerService {
 		seller.setStatus(status);
 		sellerMapper.updateByPrimaryKey(seller);
 	}
-
 }
