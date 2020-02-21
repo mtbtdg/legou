@@ -12,6 +12,7 @@
         <module name="legou_manager_web" />
         <module name="legou_sg_interface" />
         <module name="legou_sg_service" />
+        <module name="legou_shop_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,6 +23,7 @@
       <module name="legou_parent" target="1.7" />
       <module name="legou_sg_interface" target="1.7" />
       <module name="legou_sg_service" target="1.7" />
+      <module name="legou_shop_web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
