@@ -39,4 +39,9 @@ public class ItemCatServiceImpl implements ItemCatService {
     public void update(TbItemCat tbItemCat) {
         tbItemCatMapper.updateByPrimaryKey(tbItemCat);
     }
+
+    @Override
+    public TbItemCat findOne(Long id) {
+        return tbItemCatMapper.selectByPrimaryKey(id);
+    }
 }

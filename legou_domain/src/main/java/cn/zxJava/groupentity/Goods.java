@@ -13,7 +13,7 @@ public class Goods implements Serializable {
     //spu详细信息
     private TbGoodsDesc tbGoodsDesc;
     //多个sku
-    private List<TbItem> tbItemList;
+    private List<TbItem> itemList;
 
     public TbGoods getTbGoods() {
         return tbGoods;
@@ -31,17 +31,11 @@ public class Goods implements Serializable {
         this.tbGoodsDesc = tbGoodsDesc;
     }
 
-    public List<TbItem> getTbItemList() {
-        return tbItemList;
+    public List<TbItem> getItemList() {
+        return itemList;
     }
 
-    public void setTbItemList(List<TbItem> tbItemList) {
-        this.tbItemList = tbItemList;
-    }
-
-    public Goods(TbGoods tbGoods, TbGoodsDesc tbGoodsDesc, List<TbItem> tbItemList) {
-        this.tbGoods = tbGoods;
-        this.tbGoodsDesc = tbGoodsDesc;
-        this.tbItemList = tbItemList;
+    public void setItemList(List<TbItem> itemList) {
+        this.itemList = itemList;
     }
 }

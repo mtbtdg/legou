@@ -61,4 +61,16 @@ public class ItemCatController {
             return new Result(false,"操作失败");
         }
     }
+
+    @RequestMapping("/findOne/{id}")
+    public Result findOne(@PathVariable("id") Long id) {
+        try {
+            // 通过主键查询
+            TbItemCat itemCat = itemCatService.findOne(id);
+            return new Result(true, "查询成功", itemCat);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "查询失败");
+        }
+    }
 }

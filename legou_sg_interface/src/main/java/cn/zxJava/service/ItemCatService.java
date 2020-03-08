@@ -13,4 +13,6 @@ public interface ItemCatService {
     void add(TbItemCat tbItemCat);
 
     void update(TbItemCat tbItemCat);
+
+    TbItemCat findOne(Long id);
 }
