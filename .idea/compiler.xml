@@ -11,6 +11,9 @@
         <module name="legou_domain" />
         <module name="legou_manager_web" />
         <module name="legou_portal_web" />
+        <module name="legou_search_interface" />
+        <module name="legou_search_service" />
+        <module name="legou_search_web" />
         <module name="legou_sg_interface" />
         <module name="legou_sg_service" />
         <module name="legou_shop_web" />
@@ -24,6 +27,9 @@
       <module name="legou_manager_web" target="1.7" />
       <module name="legou_parent" target="1.7" />
       <module name="legou_portal_web" target="1.7" />
+      <module name="legou_search_interface" target="1.7" />
+      <module name="legou_search_service" target="1.7" />
+      <module name="legou_search_web" target="1.7" />
       <module name="legou_sg_interface" target="1.7" />
       <module name="legou_sg_service" target="1.7" />
       <module name="legou_shop_web" target="1.7" />
