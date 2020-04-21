@@ -15,7 +15,7 @@ app.controller("searchController",function($scope,$location,$http){
     $scope.search = function(){
         // 查询
         $http.post("./itemSearch/search",$scope.paramMap).success(function(resp){
-            // 返回结果
+            // 返回结果 resultMap对应就是 map集合
             $scope.resultMap = resp.data;
             // 调用前端分页效果方法
             buildPageLabel();

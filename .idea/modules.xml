@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/legou_common/legou_common.iml" filepath="$PROJECT_DIR$/legou_common/legou_common.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_dao/legou_dao.iml" filepath="$PROJECT_DIR$/legou_dao/legou_dao.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_domain/legou_domain.iml" filepath="$PROJECT_DIR$/legou_domain/legou_domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_itempage_interface/legou_itempage_interface.iml" filepath="$PROJECT_DIR$/legou_itempage_interface/legou_itempage_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_itempage_service/legou_itempage_service.iml" filepath="$PROJECT_DIR$/legou_itempage_service/legou_itempage_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_itempage_web/legou_itempage_web.iml" filepath="$PROJECT_DIR$/legou_itempage_web/legou_itempage_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_manager_web/legou_manager_web.iml" filepath="$PROJECT_DIR$/legou_manager_web/legou_manager_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_parent.iml" filepath="$PROJECT_DIR$/legou_parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_portal_web/legou_portal_web.iml" filepath="$PROJECT_DIR$/legou_portal_web/legou_portal_web.iml" />

@@ -179,7 +179,7 @@
 					<div class="value logos">
 						<ul class="logo-list">
 							<li ng-repeat="brand in resultMap.brandList">
-								<a style="cursor: pointer;" ng-click="addParam('brand',brand.text)" >{{brand.text}}</a>
+								<a style="cursor: pointer;" ng-click="addParam('brand',brand)" >{{brand}}</a>
 							</li>
 						</ul>
 					</div>
@@ -395,10 +395,13 @@
 							</li>
 							<!-- 							当前页是最后一页时 禁用 -->
 						</ul>
-						<div><span>共10页&nbsp;</span><span>
-      到第
-      <input type="text" class="page-num">
-      页 <button class="page-confirm" onclick="alert(1)">确定</button></span></div>
+						<div>
+							<span>共10页&nbsp;</span>
+							<span>
+      							到第<input type="text" class="page-num">页
+								<button class="page-confirm" onclick="alert(1)">确定</button>
+							</span>
+						</div>
 					</div>
 				</div>
 			</div>

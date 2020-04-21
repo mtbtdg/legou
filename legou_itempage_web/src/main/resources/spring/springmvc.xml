@@ -25,9 +25,15 @@
     </mvc:annotation-driven>
 
     <!-- 引用dubbo 服务 -->
-    <dubbo:application name="legou-search-web"/>
+    <dubbo:application name="legou-itempage-web"/>
     <dubbo:registry address="zookeeper://192.168.25.128:2181"/>
     <dubbo:annotation package="cn.zxJava.controller"/>
+
+    <!--Spring整合Freemarker模板-->
+    <bean id="freemarkerConfig"	class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
 
     <!--不拦截静态资源-->
     <mvc:default-servlet-handler/>

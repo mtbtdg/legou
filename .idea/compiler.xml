@@ -9,6 +9,9 @@
         <module name="legou_common" />
         <module name="legou_dao" />
         <module name="legou_domain" />
+        <module name="legou_itempage_interface" />
+        <module name="legou_itempage_service" />
+        <module name="legou_itempage_web" />
         <module name="legou_manager_web" />
         <module name="legou_portal_web" />
         <module name="legou_search_interface" />
@@ -24,6 +27,9 @@
       <module name="legou_common" target="1.7" />
       <module name="legou_dao" target="1.7" />
       <module name="legou_domain" target="1.7" />
+      <module name="legou_itempage_interface" target="1.7" />
+      <module name="legou_itempage_service" target="1.7" />
+      <module name="legou_itempage_web" target="1.7" />
       <module name="legou_manager_web" target="1.7" />
       <module name="legou_parent" target="1.7" />
       <module name="legou_portal_web" target="1.7" />
