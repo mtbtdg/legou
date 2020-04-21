@@ -6,6 +6,7 @@ import cn.zxJava.domain.TbItem;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 public class Goods implements Serializable {
     //spu
@@ -14,6 +15,16 @@ public class Goods implements Serializable {
     private TbGoodsDesc tbGoodsDesc;
     //多个sku
     private List<TbItem> itemList;
+    //分类
+    private Map<String,String> categoryMap;
+
+    public Map<String, String> getCategoryMap() {
+        return categoryMap;
+    }
+
+    public void setCategoryMap(Map<String, String> categoryMap) {
+        this.categoryMap = categoryMap;
+    }
 
     public TbGoods getTbGoods() {
         return tbGoods;
