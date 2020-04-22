@@ -1,6 +1,5 @@
 package cn.zxJava.controller;
 
-import cn.zxJava.domain.TbGoods;
 import cn.zxJava.service.ItempageService;
 import cn.zxJava.domain.TbItem;
 import cn.zxJava.entity.Result;
