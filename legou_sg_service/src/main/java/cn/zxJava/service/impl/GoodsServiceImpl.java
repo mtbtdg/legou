@@ -8,6 +8,8 @@ import cn.zxJava.mapper.*;
 import cn.zxJava.service.GoodsService;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -107,6 +109,24 @@ public class GoodsServiceImpl implements GoodsService{
                 //把sku存入数据库
                 tbItemMapper.insert(tbItem);
             }
+        }
+    }
+
+    //分页展示
+    @Override
+    public PageInfo<TbGoods> findPage(int pageNum, int pageCode) {
+        PageHelper.startPage(pageNum,pageCode);
+        List<TbGoods> tbGoodsList = tbGoodsMapper.selectByExample(null);
+        return new PageInfo<>(tbGoodsList);
+    }
+
+    //商品上架
+    @Override
+    public void updateGoods(String val, Long[] ids) {
+        for (Long id : ids) {
+            TbGoods tbGoods = tbGoodsMapper.selectByPrimaryKey(id);
+            tbGoods.setIsMarketable(val);
+            tbGoodsMapper.updateByPrimaryKey(tbGoods);
         }
     }
 }
