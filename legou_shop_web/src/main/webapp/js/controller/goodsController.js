@@ -45,11 +45,12 @@ app.controller("goodsController",function($scope,$controller,$http){
     };
 
     $scope.findOfStatus = function(){
-        alert($scope.selectstatus);
-        // 发送请求
-        $http.get().success(function(resp){
+        $http.get("../good/findPageOfStatus/"+$scope.selectstatus).success(function(resp){
             if(resp.success){
-
+                // 分页数据
+                $scope.list = resp.data;
+                // 总记录数
+                $scope.paginationConf.totalItems = resp.total;
             }else{
                 alert(resp.message);
             }

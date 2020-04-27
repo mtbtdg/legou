@@ -11,8 +11,15 @@ import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +44,12 @@ public class GoodsServiceImpl implements GoodsService{
 
     @Autowired
     private TbItemCatMapper tbItemCatMapper;
+
+    @Resource(name = "topic")
+    private Destination topic;
+
+    @Autowired
+    private JmsTemplate jmsTemplate;
 
     @Override
     public void add(Goods goods) {
@@ -123,10 +136,22 @@ public class GoodsServiceImpl implements GoodsService{
     //商品上架
     @Override
     public void updateGoods(String val, Long[] ids) {
-        for (Long id : ids) {
-            TbGoods tbGoods = tbGoodsMapper.selectByPrimaryKey(id);
-            tbGoods.setIsMarketable(val);
-            tbGoodsMapper.updateByPrimaryKey(tbGoods);
+        try {
+            for (final Long id : ids) {
+                TbGoods tbGoods = tbGoodsMapper.selectByPrimaryKey(id);
+                tbGoods.setIsMarketable(val);
+                tbGoodsMapper.updateByPrimaryKey(tbGoods);
+                if ("1".equals(val)){
+                    jmsTemplate.send(topic, new MessageCreator() {
+                        @Override
+                        public Message createMessage(Session session) throws JMSException {
+                            return session.createTextMessage(id+"");
+                        }
+                    });
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -17,7 +17,11 @@
       <module fileurl="file://$PROJECT_DIR$/legou_sg_interface/legou_sg_interface.iml" filepath="$PROJECT_DIR$/legou_sg_interface/legou_sg_interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_sg_service/legou_sg_service.iml" filepath="$PROJECT_DIR$/legou_sg_service/legou_sg_service.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_shop_web/legou_shop_web.iml" filepath="$PROJECT_DIR$/legou_shop_web/legou_shop_web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_sms_web/legou_sms_web.iml" filepath="$PROJECT_DIR$/legou_sms_web/legou_sms_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_solrdata_init/legou_solrdata_init.iml" filepath="$PROJECT_DIR$/legou_solrdata_init/legou_solrdata_init.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_user_interface/legou_user_interface.iml" filepath="$PROJECT_DIR$/legou_user_interface/legou_user_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_user_service/legou_user_service.iml" filepath="$PROJECT_DIR$/legou_user_service/legou_user_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_user_web/legou_user_web.iml" filepath="$PROJECT_DIR$/legou_user_web/legou_user_web.iml" />
     </modules>
   </component>
 </project>

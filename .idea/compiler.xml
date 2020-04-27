@@ -20,7 +20,11 @@
         <module name="legou_sg_interface" />
         <module name="legou_sg_service" />
         <module name="legou_shop_web" />
+        <module name="legou_sms_web" />
         <module name="legou_solrdata_init" />
+        <module name="legou_user_interface" />
+        <module name="legou_user_service" />
+        <module name="legou_user_web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -39,7 +43,11 @@
       <module name="legou_sg_interface" target="1.7" />
       <module name="legou_sg_service" target="1.7" />
       <module name="legou_shop_web" target="1.7" />
+      <module name="legou_sms_web" target="1.7" />
       <module name="legou_solrdata_init" target="1.7" />
+      <module name="legou_user_interface" target="1.7" />
+      <module name="legou_user_service" target="1.7" />
+      <module name="legou_user_web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

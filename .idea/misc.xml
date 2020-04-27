@@ -6,6 +6,8 @@
     <file type="web" url="file://$PROJECT_DIR$/legou_portal_web" />
     <file type="web" url="file://$PROJECT_DIR$/legou_search_web" />
     <file type="web" url="file://$PROJECT_DIR$/legou_shop_web" />
+    <file type="web" url="file://$PROJECT_DIR$/legou_sms_web" />
+    <file type="web" url="file://$PROJECT_DIR$/legou_user_web" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
