@@ -4,6 +4,7 @@ import cn.zxJava.domain.TbUser;
 import cn.zxJava.entity.Result;
 import cn.zxJava.service.UserService;
 import com.alibaba.dubbo.config.annotation.Reference;
+import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,36 +21,26 @@ public class UserController {
     @Reference
     private UserService userService;
 
-    /**
-     * 发送短信验证码
-     * @return
-     */
+    /*
+    * 发送短信
+    * */
     @RequestMapping("/sendCode/{phone}")
     public String sendCode(@PathVariable("phone") String phone){
+        String result = null;
         try {
-            // 发送验证码
-            String result = userService.sendCode(phone);
-            // 获取结果
-            return result;
+            result = userService.sendCode(phone);
         } catch (Exception e) {
             e.printStackTrace();
-            return null;
         }
+        return result;
     }
 
-    /**
-     * 注册
-     */
+    /*
+     * 完成注册
+     * */
     @RequestMapping("/regist/{code}")
-    public Result regist(@PathVariable("code") String code,@RequestBody TbUser tbUser){
-        try {
-            // 进行用户注册
-            Result result = userService.regist(tbUser, code);
-            return result;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new Result(false,"注册失败");
-        }
+    public Result regist(@PathVariable("code") String code, @RequestBody TbUser tbUser){
+        return userService.regist(tbUser,code);
     }
 
 }
