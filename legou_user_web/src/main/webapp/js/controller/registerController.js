@@ -31,7 +31,7 @@ app.controller("registerController",function($scope,$controller,$http){
         // 用户注册
         $http.post("user/regist/"+$scope.code,$scope.entity).success(function(resp){
             if(resp.success){
-                location.href = "login.html";
+                location.href = "home-index.html";
             }else{
                 alert(resp.message);
             }

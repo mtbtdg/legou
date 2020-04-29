@@ -33,6 +33,10 @@
         <module>legou_user_service</module>
         <module>legou_user_web</module>
 
+        <module>legou_cart_interface</module>
+        <module>legou_cart_service</module>
+        <module>legou_cart_web</module>
+
     </modules>
 
     <packaging>pom</packaging>

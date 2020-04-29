@@ -4,7 +4,6 @@ import cn.zxJava.domain.TbUser;
 import cn.zxJava.entity.Result;
 import cn.zxJava.service.UserService;
 import com.alibaba.dubbo.config.annotation.Reference;
-import org.springframework.data.solr.core.SolrTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -6,6 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="legou_cart_interface" />
+        <module name="legou_cart_service" />
+        <module name="legou_cart_web" />
         <module name="legou_common" />
         <module name="legou_dao" />
         <module name="legou_domain" />
@@ -28,6 +31,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="legou_cart_interface" target="1.7" />
+      <module name="legou_cart_service" target="1.7" />
+      <module name="legou_cart_web" target="1.7" />
       <module name="legou_common" target="1.7" />
       <module name="legou_dao" target="1.7" />
       <module name="legou_domain" target="1.7" />
