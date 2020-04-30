@@ -1,6 +1,7 @@
 package cn.zxJava.service.impl;
 
 import cn.zxJava.domain.TbAddress;
+import cn.zxJava.domain.TbAddressExample;
 import cn.zxJava.mapper.TbAddressMapper;
 import cn.zxJava.service.AddressService;
 import com.alibaba.dubbo.config.annotation.Service;
@@ -20,6 +21,8 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public List<TbAddress> findAddressList(String username) {
-        return null;
+        TbAddressExample example = new TbAddressExample();
+        example.createCriteria().andUserIdEqualTo(username);
+        return tbAddressMapper.selectByExample(example);
     }
 }

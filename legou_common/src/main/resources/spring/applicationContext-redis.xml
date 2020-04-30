@@ -31,4 +31,6 @@
         <property name="connectionFactory" ref="JedisConnectionFactory"/>
     </bean>
 
+    <bean id="idWorker" class="cn.zxJava.utils.IdWorker" />
+
 </beans>
