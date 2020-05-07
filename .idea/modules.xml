@@ -13,6 +13,9 @@
       <module fileurl="file://$PROJECT_DIR$/legou_itempage_web/legou_itempage_web.iml" filepath="$PROJECT_DIR$/legou_itempage_web/legou_itempage_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_manager_web/legou_manager_web.iml" filepath="$PROJECT_DIR$/legou_manager_web/legou_manager_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_parent.iml" filepath="$PROJECT_DIR$/legou_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_pay_interface/legou_pay_interface.iml" filepath="$PROJECT_DIR$/legou_pay_interface/legou_pay_interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_pay_service/legou_pay_service.iml" filepath="$PROJECT_DIR$/legou_pay_service/legou_pay_service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/legou_pay_web/legou_pay_web.iml" filepath="$PROJECT_DIR$/legou_pay_web/legou_pay_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_portal_web/legou_portal_web.iml" filepath="$PROJECT_DIR$/legou_portal_web/legou_portal_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_search_interface/legou_search_interface.iml" filepath="$PROJECT_DIR$/legou_search_interface/legou_search_interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/legou_search_service/legou_search_service.iml" filepath="$PROJECT_DIR$/legou_search_service/legou_search_service.iml" />

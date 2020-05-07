@@ -16,6 +16,9 @@
         <module name="legou_itempage_service" />
         <module name="legou_itempage_web" />
         <module name="legou_manager_web" />
+        <module name="legou_pay_interface" />
+        <module name="legou_pay_service" />
+        <module name="legou_pay_web" />
         <module name="legou_portal_web" />
         <module name="legou_search_interface" />
         <module name="legou_search_service" />
@@ -42,6 +45,9 @@
       <module name="legou_itempage_web" target="1.7" />
       <module name="legou_manager_web" target="1.7" />
       <module name="legou_parent" target="1.7" />
+      <module name="legou_pay_interface" target="1.7" />
+      <module name="legou_pay_service" target="1.7" />
+      <module name="legou_pay_web" target="1.7" />
       <module name="legou_portal_web" target="1.7" />
       <module name="legou_search_interface" target="1.7" />
       <module name="legou_search_service" target="1.7" />

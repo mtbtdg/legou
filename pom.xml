@@ -37,6 +37,10 @@
         <module>legou_cart_service</module>
         <module>legou_cart_web</module>
 
+        <module>legou_pay_interface</module>
+        <module>legou_pay_service</module>
+        <module>legou_pay_web</module>
+
     </modules>
 
     <packaging>pom</packaging>
