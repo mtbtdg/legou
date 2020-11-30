@@ -36,8 +36,8 @@ public class SmsController {
             String domain = "dysmsapi.aliyuncs.com";
 
             // 此处需要替换成开发者自己的AK(在阿里云访问控制台寻找)，非常重要。不要泄露给其他人
-            String accessKeyId = "LTAI4FzSmUbKzqCg9mzjnBTB";
-            String accessKeySecret = "1DOHWDOMF0gXtp5SBWDX9aes0rg4Ik";
+            String accessKeyId = "************************";
+            String accessKeySecret = "*******************************";
 
             //可自助调整超时时间
             System.setProperty("sun.net.client.defaultConnectTimeout", "10000");

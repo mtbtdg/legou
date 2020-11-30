@@ -1,4 +1,4 @@
-// 定义brancController
+// 定义brandController
 app.controller("brandController",function($scope,$controller,$http){
 	
 	// controller的继承，本质就是共用一个$scope
